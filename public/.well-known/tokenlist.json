@@ -1,0 +1,13 @@
+{
+"tokens": [
+{
+"name": "Tethur USD",
+"symbol": "USDT.",
+"decimals": 6,
+"chainId": 1,
+"address": "0x6799df3f57a2Da6dFad77d5e0f961a2BED0bD76e",
+"logoURI": "https://www.tethurusd.com/logo.png",
+"tags": ["stable", "erc20", "usd"]
+}
+]
+}
