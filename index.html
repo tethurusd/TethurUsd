@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Tethur USD (USDT.)</title>
 <link rel="icon" type="image/png" href="assets/logo.png" />
+
 <style>
 body {
 margin: 0;
@@ -12,67 +13,88 @@ font-family: Inter, Arial, sans-serif;
 background: #f4f8f6;
 color: #0f2725;
 }
+
+/* HERO SECTION */
 .hero {
 text-align: center;
-padding: 80px 20px 50px;
-background: linear-gradient(180deg, #e9f9f2, #f4f8f6);
+padding: 95px 20px 70px;
+background: linear-gradient(180deg, #e8fff4, #f7fffb);
+border-bottom: 1px solid #e0ece8;
 }
-.hero img {
-width: 120px;
-height: 120px;
-margin-bottom: 25px;
+.logo-wrapper {
+display: flex;
+justify-content: center;
+margin-bottom: 30px;
+}
+.logo-img {
+width: 150px;
+height: 150px;
 border-radius: 50%;
-box-shadow: 0px 0px 20px rgba(0,0,0,0.08);
+box-shadow: 0 0 28px rgba(0, 0, 0, 0.15);
+animation: fadeIn 1.2s ease-in-out;
 }
+@keyframes fadeIn {
+from { opacity: 0; transform: scale(0.9); }
+to { opacity: 1; transform: scale(1); }
+}
+
 .title {
-font-size: 42px;
+font-size: 44px;
 font-weight: 700;
 }
 .tagline {
 margin-top: 10px;
-font-size: 18px;
-opacity: 0.8;
+font-size: 19px;
+opacity: 0.85;
 }
-.badges {
-margin-top: 25px;
-}
+.badges { margin-top: 25px; }
 .badge {
 display: inline-block;
-background: #d2e8df;
+background: #cdece0;
 color: #0f2725;
 padding: 8px 14px;
 border-radius: 20px;
 margin: 4px;
 font-size: 14px;
 }
-.section {
-max-width: 950px;
-margin: 40px auto;
-background: white;
-padding: 30px;
-border-radius: 18px;
-box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
-}
-h2 {
-margin-top: 0;
-color: #0f2725;
-font-size: 26px;
-}
+
 .btn {
 display: inline-block;
 padding: 14px 26px;
 background: #0ea674;
 color: white;
 border-radius: 10px;
-margin: 10px;
+margin: 15px 10px 0 10px;
 text-decoration: none;
 font-size: 16px;
+transition: 0.2s;
 }
+.btn:hover { background: #0d8c64; }
+
 .btn-outline {
 background: white;
 color: #0ea674;
 border: 2px solid #0ea674;
 }
+.btn-outline:hover {
+background: #e4f9f1;
+}
+
+/* SECTIONS */
+.section {
+max-width: 950px;
+margin: 40px auto;
+background: white;
+padding: 35px;
+border-radius: 18px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+h2 {
+margin-top: 0;
+color: #0f2725;
+font-size: 26px;
+}
+
 .info-grid {
 display: grid;
 grid-template-columns: 1fr 1fr;
@@ -83,7 +105,10 @@ margin-top: 20px;
 background: #f4f8f6;
 padding: 20px;
 border-radius: 14px;
+font-size: 16px;
 }
+
+/* FOOTER */
 .footer {
 margin-top: 60px;
 padding: 25px;
@@ -95,9 +120,10 @@ font-size: 14px;
 color: #0ea674;
 text-decoration: none;
 }
+
 @media(max-width: 700px) {
 .info-grid { grid-template-columns: 1fr; }
-.title { font-size: 32px; }
+.title { font-size: 34px; }
 }
 </style>
 </head>
@@ -106,15 +132,18 @@ text-decoration: none;
 
 <!-- HERO -->
 <div class="hero">
-<img src="assets/logo.png" alt="Tethur USD Logo" />
+<div class="logo-wrapper">
+<img src="assets/logo.png" alt="Tethur USD Logo" class="logo-img" />
+</div>
+
 <div class="title">Tethur USD (USDT.)</div>
-<div class="tagline">Clean branding. Fixed supply. Pure transparency.</div>
+<div class="tagline">Low fees. Fixed supply. Pure transparency.</div>
 
 <div class="badges">
 <span class="badge">ERC-20</span>
 <span class="badge">6 Decimals</span>
 <span class="badge">Fixed Supply</span>
-<span class="badge">Educational Asset</span>
+<span class="badge">Stable Asset</span>
 </div>
 
 <br />
@@ -126,25 +155,16 @@ text-decoration: none;
 <div class="section">
 <h2>Overview</h2>
 <p>
-Tethur USD (USDT.) is a clean, modern USD-linked ERC-20 style digital asset created with
-transparency, fixed supply, and educational value in mind. Built on the Ethereum blockchain,
-Tethur USD provides a simple, verifiable, and fully immutable contract structure with no owner
-privileges, no mint function, and no external hooks.
+Tethur USD (USDT.) is a modern ERC-20 stable-asset representation built for transparency,
+stability, and clarity. The supply is fixed, the contract is immutable, and the code contains
+no owner privileges, no mint capability, no hidden fees, and no upgrade hooks.
 </p>
 
 <div class="info-grid">
-<div class="card">
-<strong>Token Name:</strong><br />Tethur USD
-</div>
-<div class="card">
-<strong>Symbol:</strong><br />USDT.
-</div>
-<div class="card">
-<strong>Total Supply:</strong><br />102,696,605,277
-</div>
-<div class="card">
-<strong>Decimals:</strong><br />6
-</div>
+<div class="card"><strong>Token Name:</strong><br />Tethur USD</div>
+<div class="card"><strong>Symbol:</strong><br />USDT.</div>
+<div class="card"><strong>Total Supply:</strong><br />102,696,605,277</div>
+<div class="card"><strong>Decimals:</strong><br />6</div>
 <div class="card" style="grid-column: span 2;">
 <strong>Contract Address:</strong><br />
 <a class="link" target="_blank" href="https://etherscan.io/token/0x6799df3f57a2Da6dFad77d5e0f961a2BED0bD76e">
@@ -157,14 +177,14 @@ privileges, no mint function, and no external hooks.
 <!-- TOKENOMICS -->
 <div class="section">
 <h2>Tokenomics</h2>
-<p>The Tethur USD contract is fully immutable and includes:</p>
 <ul>
-<li>✔ Fixed total supply (no minting)</li>
-<li>✔ No owner control after deployment</li>
-<li>✔ No burn functions</li>
-<li>✔ No upgradeability</li>
-<li>✔ No hidden fees</li>
+<li>✔ Fixed total supply (no minting possible)</li>
+<li>✔ No owner privileges after deployment</li>
+<li>✔ No burn function</li>
+<li>✔ No fees or taxes</li>
+<li>✔ No upgradeable mechanisms</li>
 <li>✔ No external hook contracts</li>
+<li>✔ Immutable ERC-20 code</li>
 </ul>
 </div>
 
@@ -172,26 +192,26 @@ privileges, no mint function, and no external hooks.
 <div class="section">
 <h2>Roadmap</h2>
 <ul>
-<li><strong>Q4 2025:</strong> Contract launch + branding release</li>
-<li><strong>Q1 2026:</strong> Community expansion (Telegram + Twitter)</li>
-<li><strong>Q2 2026:</strong> Educational material releases</li>
-<li><strong>Q3 2026:</strong> Transparency dashboard testing</li>
+<li><strong>Q4 2025:</strong> Contract launch + branding reveal</li>
+<li><strong>Q1 2026:</strong> Telegram & Twitter expansion</li>
+<li><strong>Q2 2026:</strong> Stable-asset transparency tools</li>
+<li><strong>Q3 2026:</strong> Dashboard and analytics</li>
 </ul>
 </div>
 
-<!-- SAFETY -->
+<!-- SECURITY -->
 <div class="section">
 <h2>Security & Transparency</h2>
 <ul>
-<li>✔ Verified ERC-20 standard</li>
-<li>✔ No upgradeable proxy contract</li>
-<li>✔ No fees, taxes, or manipulation abilities</li>
-<li>✔ Immutable and trustless code</li>
-<li>✔ Trust Wallet and MetaMask compatible</li>
+<li>✔ Immutable ERC-20 standard</li>
+<li>✔ No upgradeable proxy</li>
+<li>✔ No fees, no taxes, no manipulation</li>
+<li>✔ Contract is fully public + verified</li>
+<li>✔ Trust Wallet + MetaMask compatible</li>
 </ul>
 </div>
 
-<!-- SOCIAL LINKS -->
+<!-- LINKS -->
 <div class="section">
 <h2>Official Links</h2>
 <p>
@@ -203,7 +223,7 @@ privileges, no mint function, and no external hooks.
 
 <!-- FOOTER -->
 <div class="footer">
-© 2025 Tethur USD • Educational Digital Asset • Contract: 0x6799df3f57a2Da6dFad77d5e0f961a2BED0bD76e
+© 2025 Tethur USD • Stable Digital Asset • Contract: 0x6799df3f57a2Da6dFad77d5e0f961a2BED0bD76e
 </div>
 
 </body>
