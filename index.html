@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tethur USD (USDT.)</title>
+<style>
+:root {
+--green-main: #0f7e68;
+--green-light: #e6f4f1;
+--green-accent: #0ba98f;
+--bg: #f7faf9;
+--card-bg: #ffffff;
+--shadow: 0 8px 24px rgba(15, 126, 104, 0.12);
+}
+* { box-sizing: border-box; }
+body {
+margin: 0;
+background: var(--bg);
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+color: #0b2e26;
+line-height: 1.6;
+}
+a { color: inherit; }
+header {
+background: linear-gradient(135deg, #ffffff, #f0fffb);
+padding: 40px 20px 30px;
+text-align: center;
+border-bottom: 1px solid #d9ebe6;
+}
+.hero-inner {
+max-width: 1100px;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+gap: 30px;
+}
+.hero-logo {
+flex: 0 0 120px;
+}
+.hero-logo img {
+width: 110px;
+height: 110px;
+border-radius: 999px;
+box-shadow: var(--shadow);
+object-fit: cover;
+background: #dff5f0;
+}
+.hero-text {
+flex: 1 1 260px;
+min-width: 260px;
+}
+.hero-title {
+margin: 0;
+font-size: 2.4rem;
+font-weight: 750;
+color: #10211d;
+}
+.hero-sub {
+margin-top: 10px;
+font-size: 1.05rem;
+color: #31574c;
+}
+.hero-tags {
+margin-top: 12px;
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+justify-content: center;
+}
+.tag {
+font-size: 0.8rem;
+padding: 4px 10px;
+border-radius: 999px;
+background: #e3f2ee;
+color: #165648;
+border: 1px solid #c2e4db;
+}
+.hero-actions {
+margin-top: 18px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 10px;
+}
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 6px;
+background: var(--green-main);
+color: #fff;
+padding: 10px 18px;
+font-size: 0.95rem;
+border-radius: 999px;
+text-decoration: none;
+transition: 0.18s ease-in-out;
+border: none;
+cursor: pointer;
+box-shadow: 0 4px 14px rgba(15, 126, 104, 0.25);
+}
+.btn.secondary {
+background: #ffffff;
+color: var(--green-main);
+border: 1px solid #cde5dd;
+box-shadow: none;
+}
+.btn:hover {
+transform: translateY(-1px);
+background: var(--green-accent);
+}
+.btn.secondary:hover {
+background: #f4fffb;
+}
+.container {
+max-width: 1100px;
+margin: 30px auto 50px;
+padding: 0 20px;
+}
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 20px;
+}
+.card {
+background: var(--card-bg);
+border-radius: 14px;
+padding: 22px 22px 20px;
+box-shadow: var(--shadow);
+border: 1px solid #e0efea;
+animation: fadeIn 0.6s ease;
+}
+.card h2 {
+margin-top: 0;
+margin-bottom: 8px;
+color: var(--green-main);
+font-size: 1.1rem;
+}
+.muted {
+color: #5a7a72;
+font-size: 0.9rem;
+}
+.address-box {
+background: var(--green-light);
+padding: 12px;
+border-radius: 10px;
+font-family: monospace;
+word-break: break-all;
+border-left: 4px solid var(--green-main);
+font-size: 0.9rem;
+}
+ul {
+padding-left: 18px;
+margin: 10px 0 0;
+color: #23443b;
+font-size: 0.95rem;
+}
+.token-metrics {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+gap: 10px;
+margin-top: 12px;
+}
+.metric {
+background: #f3fbf8;
+border-radius: 10px;
+padding: 10px 12px;
+font-size: 0.85rem;
+border: 1px solid #d8ece4;
+}
+.metric-label {
+color: #54786f;
+font-size: 0.8rem;
+}
+.metric-value {
+font-weight: 650;
+margin-top: 3px;
+color: #123229;
+}
+.socials {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-top: 10px;
+}
+.chart-placeholder {
+background: #f1f8f5;
+border-radius: 10px;
+padding: 30px;
+text-align: center;
+border: 1px dashed #c7ded4;
+color: #6c897f;
+font-size: 0.9rem;
+}
+.roadmap-list {
+list-style: none;
+padding-left: 0;
+margin-top: 10px;
+}
+.roadmap-list li {
+margin-bottom: 6px;
+}
+.roadmap-tag {
+font-size: 0.78rem;
+padding: 2px 8px;
+border-radius: 999px;
+margin-right: 6px;
+background: #e1f3ee;
+color: #145143;
+}
+.disclaimer {
+font-size: 0.8rem;
+color: #6e8680;
+line-height: 1.5;
+}
+.top-link {
+position: fixed;
+right: 16px;
+bottom: 18px;
+background: var(--green-main);
+color: #fff;
+border-radius: 999px;
+padding: 8px 12px;
+font-size: 0.8rem;
+text-decoration: none;
+box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+.top-link:hover {
+background: var(--green-accent);
+}
+footer {
+text-align: center;
+padding: 25px 10px 30px;
+margin-top: 10px;
+color: #4b6761;
+font-size: 0.85rem;
+}
+@keyframes fadeIn {
+from {opacity:0; transform:translateY(6px);} to {opacity:1; transform:translateY(0);}
+}
+@media (max-width: 640px) {
+.hero-title { font-size: 2rem; }
+.hero-sub { font-size: 0.96rem; }
+header { padding-top: 28px; }
+}
+</style>
+</head>
+<body>
+
+<a id="top"></a>
+<header>
+<div class="hero-inner">
+<div class="hero-logo">
+<!-- Replace logo.png with your actual logo file path on hosting -->
+<img src="logo.png" alt="Tethur USD Logo" />
+</div>
+<div class="hero-text">
+<h1 class="hero-title">Tethur USD (USDT.)</h1>
+<p class="hero-sub">
+A modern, USD-linked ERC-20 style asset with clean branding, fixed supply, and a focus on
+clarity, transparency, and education.
+</p>
+<div class="hero-tags">
+<span class="tag">ERC-20</span>
+<span class="tag">6 Decimals</span>
+<span class="tag">Fixed Supply</span>
+<span class="tag">Educational Asset</span>
+</div>
+<div class="hero-actions">
+<a class="btn" href="https://etherscan.io/token/0x6799df3f57a2Da6dFad77d5e0f961a2BED0bD76e" target="_blank">View on Etherscan</a>
+<a class="btn secondary" href="https://t.me/TethurUSD" target="_blank">Join Telegram</a>
+</div>
+</div>
+</div>
+</header>
+
+<div class="container">
+
+<div class="grid" style="margin-bottom: 20px;">
+<div class="card">
+<h2>Overview</h2>
+<p>
+Tethur USD (USDT.) is a clean, modern stable-asset representation built on the Ethereum
+blockchain. Designed for educational and demonstration purposes, it provides a premium and
+transparent ERC-20 experience with 6-decimal precision.
+</p>
+<p class="muted">This project is not affiliated with Tether or any other existing stablecoin issuer.</p>
+</div>
+
+<div class="card">
+<h2>Token Snapshot</h2>
+<div class="token-metrics">
+<div class="metric">
+<div class="metric-label">Name</div>
+<div class="metric-value">Tethur USD</div>
+</div>
+<div class="metric">
+<div class="metric-label">Symbol</div>
+<div class="metric-value">USDT.</div>
+</div>
+<div class="metric">
+<div class="metric-label">Decimals</div>
+<div class="metric-value">6</div>
+</div>
+<div class="metric">
+<div class="metric-label">Total Supply</div>
+<div class="metric-value">102,696,605,277</div>
+</div>
+<div class="metric">
+<div class="metric-label">Network</div>
+<div class="metric-value">Ethereum (ERC-20)</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="grid" style="margin-bottom: 20px;">
+<div class="card">
+<h2>Contract Address</h2>
+<p class="muted">Always verify the address before interacting.</p>
+<div class="address-box">
+0x6799df3f57a2Da6dFad77d5e0f961a2BED0bD76e
+</div>
+</div>
+
+<div class="card">
+<h2>Official Links</h2>
+<div class="socials">
+<a class="btn secondary" href="https://twitter.com/TethurUSD" target="_blank">Twitter</a>
+<a class="btn secondary" href="https://t.me/TethurUSD" target="_blank">Telegram</a>
+<a class="btn secondary" href="mailto:TethurUSD@gmail.com" target="_blank">Email</a>
+</div>
+<p class="muted" style="margin-top: 10px;">More channels may be added as the project evolves.</p>
+</div>
+</div>
+
+<div class="grid" style="margin-bottom: 20px;">
+<div class="card">
+<h2>How to View / Import</h2>
+<ul>
+<li>Open your Web3 wallet (e.g. MetaMask, Trust Wallet).</li>
+<li>Make sure you are on the Ethereum network.</li>
+<li>Use the "Import Token" / "Add Custom Token" option.</li>
+<li>Paste the contract address above into the token contract field.</li>
+<li>Decimals: <strong>6</strong>, Symbol: <strong>USDT.</strong> (usually auto-fills).</li>
+<li>Confirm and save to see your Tethur USD balance.</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Future Trading / Liquidity</h2>
+<p class="muted">
+Liquidity, pair listings, and swapping routes will be announced via the official channels if enabled
+in the future.
+</p>
+<div class="chart-placeholder">
+Chart &amp; live data integrations (DEX / CEX) can be embedded here once markets are active.
+</div>
+</div>
+</div>
+
+<div class="grid" style="margin-bottom: 20px;">
+<div class="card">
+<h2>Token Utility &amp; Purpose</h2>
+<ul>
+<li>Showcase stable-asset UX inside Web3 wallets.</li>
+<li>Educate users about ERC-20, decimals, balances and fixed supply.</li>
+<li>Serve as a building block for demos, dashboards and tooling tests.</li>
+<li>Provide a premium visual and brand experience for stable-style assets.</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Roadmap (High-Level)</h2>
+<ul class="roadmap-list">
+<li><span class="roadmap-tag">Phase 1</span> Token deployment, branding, and basic website.</li>
+<li><span class="roadmap-tag">Phase 2</span> Wallet guides, community growth, and ecosystem integrations.</li>
+<li><span class="roadmap-tag">Phase 3</span> Optional liquidity, dashboards, and analytics tooling.</li>
+<li><span class="roadmap-tag">Phase 4</span> Long-term maintenance and educational use-case expansion.</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<h2>Disclaimer</h2>
+<p class="disclaimer">
+Tethur USD (USDT.) is presented as an educational and demonstration-focused ERC-20 asset.
+It is <strong>not</strong> issued by a bank, regulator, or government, and it does not represent
+a claim on real-world USD or any other currency. Nothing on this website constitutes financial,
+legal, or investment advice. Always do your own research and only interact with smart contracts
+you understand and trust.
+</p>
+</div>
+
+</div>
+
+<a class="top-link" href="#top">Back to top</a>
+
+<footer>
+© 2025 Tethur USD — Educational ERC-20 Asset • Contact: <a href="mailto:TethurUSD@gmail.com">TethurUSD@gmail.com</a>
+</footer>
+
+</body>
+</html>
