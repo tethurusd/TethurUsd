@@ -1,0 +1,17 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+
+<!-- Outer Circle -->
+<circle cx="256" cy="256" r="240" fill="#26A87A" stroke="#F7EFAF" stroke-width="28"/>
+
+<!-- Tilted Orbital Ring -->
+<g transform="rotate(-10 256 256)">
+<ellipse cx="256" cy="250" rx="145" ry="58" fill="none" stroke="white" stroke-width="22"/>
+</g>
+
+<!-- T Horizontal Bar -->
+<rect x="150" y="160" width="212" height="48" fill="white"/>
+
+<!-- T Vertical Bar -->
+<rect x="236" y="160" width="40" height="210" fill="white"/>
+
+</svg>
