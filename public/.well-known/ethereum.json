@@ -1,8 +1,0 @@
-{
-"schemaVersion": "1.0.0",
-"label": "Tethur USD (USDT.)",
-"address": "0x6799df3f57a20a6fdad77d50e9567ccfe0f63776",
-"decimals": 6,
-"supportsEIP1559": true,
-"icon": "https://tethurusd.com/logo.png"
-}
